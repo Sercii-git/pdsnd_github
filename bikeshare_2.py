@@ -55,11 +55,21 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
+<<<<<<< HEAD
     print(" Your choices: "
           "{}, {} and {} \n".format(city, month, day))
 
     # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
+||||||| e9e2840
+=======
+    print(" Your choices: "
+          "{}, {} and {}".format(city, month, day))
+    print()
+
+    # load data file into a dataframe
+    df = pd.read_csv(CITY_DATA[city])
+>>>>>>> documentation
 
     # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
@@ -116,6 +126,7 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
+<<<<<<< HEAD
     # TO DO: display most commonly used start station
     print('Most Commonly Used Start '
           'Station: ', df['Start Station'].mode()[0])
@@ -127,6 +138,28 @@ def station_stats(df):
     # TO DO: display most frequent combination of start station and end station trip
     df['route'] = df['Start Station'] + ' - ' + df['End Station']
     print('Most Frequent Combination: ', df['route'].mode()[0])
+||||||| e9e2840
+    # display most commonly used start station
+
+
+    # display most commonly used end station
+
+
+    # display most frequent combination of start station and end station trip
+
+=======
+    # TO DO: display most commonly used start station
+    print('Most Commonly Used Start '
+          'Station: ', df['Start Station'].mode()[0])
+
+    # TO DO: display most commonly used end station
+    print('Most Commonly Used End '
+          'Station: ', df['End Station'].mode()[0])
+
+    # TO DO: display most frequent combination of start station and end station trip
+    df['route'] = df['Start Station'] + ' - ' + df['End Station']
+    print('Most Frequent Combination: ', df['route'].mode()[0])
+>>>>>>> documentation
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -202,9 +235,17 @@ def main():
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
+<<<<<<< HEAD
         user_stats(df, city)
 #raw data function is added.
         raw_data(df)
+||||||| e9e2840
+        user_stats(df)
+=======
+        user_stats(df, city)
+
+        raw_data(df)
+>>>>>>> documentation
 
             
         restart = input('\nWould you like to restart? Enter yes or no.\n')
